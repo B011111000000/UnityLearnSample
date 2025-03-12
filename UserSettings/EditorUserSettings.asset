@@ -10,6 +10,7 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-1:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 02540d055400505a5f59552346750b4440154f7a7d7025667c7c1930b0e4373e
 =======
       value: 5b50075252060d0e5a0b597540225d44134f4e287b7a76322f2b1b61bab23639
@@ -17,6 +18,12 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-2:
       value: 5a500d53510d5b0b5d5b0a2347225e444e4f1a737e2a71667b7a4f31b6e5306c
 >>>>>>> mikhail_scene
+=======
+      value: 5003035e510c5b5a5d0b0e7241210d444f161b2c747174677e7f1c6ab1b76461
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 56015554010c5e0f0f5c5c7011730a444e4e48287e797663757a4437bbe4363c
+>>>>>>> tanchur_scene
       flags: 0
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
@@ -33,10 +40,14 @@ EditorUserSettings:
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_DesiredImportWorkerCount: 3
 =======
   m_DesiredImportWorkerCount: 2
 >>>>>>> mikhail_scene
+=======
+  m_DesiredImportWorkerCount: 3
+>>>>>>> tanchur_scene
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
