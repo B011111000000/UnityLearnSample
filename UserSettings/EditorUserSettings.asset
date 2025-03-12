@@ -11,6 +11,7 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-1:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 02540d055400505a5f59552346750b4440154f7a7d7025667c7c1930b0e4373e
 =======
       value: 5b50075252060d0e5a0b597540225d44134f4e287b7a76322f2b1b61bab23639
@@ -24,6 +25,9 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-2:
       value: 56015554010c5e0f0f5c5c7011730a444e4e48287e797663757a4437bbe4363c
 >>>>>>> tanchur_scene
+=======
+      value: 57545656525708095d0a58264275074443161d7b2d7b7265742a4467e7b1636f
+>>>>>>> artem_scene
       flags: 0
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
@@ -41,6 +45,7 @@ EditorUserSettings:
   m_SemanticMergeMode: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_DesiredImportWorkerCount: 3
 =======
   m_DesiredImportWorkerCount: 2
@@ -48,6 +53,9 @@ EditorUserSettings:
 =======
   m_DesiredImportWorkerCount: 3
 >>>>>>> tanchur_scene
+=======
+  m_DesiredImportWorkerCount: 2
+>>>>>>> artem_scene
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
