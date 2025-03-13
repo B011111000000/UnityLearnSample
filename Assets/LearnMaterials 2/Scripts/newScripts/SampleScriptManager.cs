@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class SampleScriptManager : MonoBehaviour
 {
-    void Start()
-    {
-        UseAll();
-    }
 
     // Список всех SampleScript
     public List<SampleScript> scripts = new List<SampleScript>();
 
+
     // Метод для вызова Use() у всех скриптов
+    [ContextMenu("Run All Scripts")]
     public void UseAll()
     {
         foreach (var script in scripts)

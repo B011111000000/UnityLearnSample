@@ -17,7 +17,6 @@ public class TransparentModule : MonoBehaviour
         mat = GetComponent<Renderer>().material;
         defaultAlpha = mat.color.a;
         toDefault = false;
-        ActivateModule();
     }
 
     public void ActivateModule()

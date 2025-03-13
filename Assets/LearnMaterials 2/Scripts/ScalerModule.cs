@@ -22,7 +22,6 @@ public class ScalerModule : MonoBehaviour
         myTransform = transform;
         defaultScale = myTransform.localScale;
         toDefault = false;
-        ActivateModule();
     }
 
     public void ActivateModule()

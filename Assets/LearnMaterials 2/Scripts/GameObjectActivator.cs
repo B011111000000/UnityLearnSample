@@ -21,10 +21,6 @@ public class GameObjectActivator : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        ActivateModule();
-    }
 
     public void ActivateModule()
     {
