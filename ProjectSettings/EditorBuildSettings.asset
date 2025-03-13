@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/LearnMaterials 1/LearnScene 1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Ignat_scene/Ignat_scene.unity
+    guid: ae9c159a279a66446b7018c615dc2dcf
+  - enabled: 1
+    path: Assets/Artem_scene/Artem_scene.unity
+    guid: 4eb07ba20d4d26845ae1a3459c94e177
+  - enabled: 1
+    path: Assets/Mikhail_scene/Mikhail_scene.unity
+    guid: 9a95482005fa7aa488b92b76632b4ed4
+  - enabled: 1
+    path: Assets/Tanchur_scene/Tanchur_scene.unity
+    guid: 3278492a0eb01b249acf892736a93709
   m_configObjects: {}
