@@ -2,12 +2,15 @@
 using UnityEngine;
 
 /// <summary>
-/// Задаёт указанным объектам значение activeSalfe, равное state
+/// Задаёт указанным объектам значение activeSelf, равное state
 /// </summary>
 [HelpURL("https://docs.google.com/document/d/1GP4_m0MzOF8L5t5pZxLChu3V_TFIq1czi1oJQ2X5kpU/edit?usp=sharing")]
 public class GameObjectActivator : MonoBehaviour
 {
+    [SerializeField, Tooltip("Список объектов, которым нужно задать состояние")]
     private List<StateContainer> targets;
+
+    [SerializeField, Tooltip("Включить отладку для визуализации состояния объектов")]
     private bool debug;
 
     private void Awake()
@@ -17,10 +20,17 @@ public class GameObjectActivator : MonoBehaviour
             item.defaultValue = item.targetGO.activeSelf;
         }
     }
+
+    private void Start()
+    {
+        ActivateModule();
+    }
+
     public void ActivateModule()
     {
         SetStateForAll();
     }
+
     public void ReturnToDefaultState()
     {
         foreach (var item in targets)
@@ -49,7 +59,7 @@ public class GameObjectActivator : MonoBehaviour
     #region Материал ещё не изучен
     private void OnDrawGizmos()
     {
-        if(debug)
+        if (debug)
         {
             Gizmos.color = Color.gray;
             Gizmos.DrawSphere(transform.position, 0.3f);
@@ -58,14 +68,7 @@ public class GameObjectActivator : MonoBehaviour
             {
                 if (targets[i] != null && targets[i].targetGO != null)
                 {
-                    if (targets[i].targetState)
-                    {
-                        Gizmos.color = Color.green;
-                    }
-                    else
-                    {
-                        Gizmos.color = Color.red;
-                    }
+                    Gizmos.color = targets[i].targetState ? Color.green : Color.red;
                     Gizmos.DrawLine(transform.position, targets[i].targetGO.transform.position);
                 }
                 else
@@ -78,12 +81,22 @@ public class GameObjectActivator : MonoBehaviour
     #endregion
 }
 
-#region Материал ещё не изучен
 [System.Serializable]
 public class StateContainer
 {
-    [Tooltip("Объект, которому нужно задать состояние")] public GameObject targetGO;
-    [Tooltip("Целевое состояние. Если отмечено, объект будет включен")] public bool targetState = false;
-    [HideInInspector] public bool defaultValue;
+    [Tooltip("Объект, которому нужно задать состояние")]
+    public GameObject targetGO;
+
+    [Tooltip("Целевое состояние. Если отмечено, объект будет включен")]
+    [SerializeField]
+    public bool targetState = false;
+
+    [HideInInspector]
+    public bool defaultValue;
+
+    public bool TargetState
+    {
+        get => targetState;
+        set => targetState = value;
+    }
 }
-#endregion
