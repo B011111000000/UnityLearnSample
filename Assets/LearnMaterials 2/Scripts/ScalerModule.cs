@@ -5,7 +5,7 @@ using UnityEngine;
 /// Модуль для изменения масштаба объекта с заданной скоростью.
 /// </summary>
 [HelpURL("https://docs.google.com/document/d/1rdTEVSrCcYOjqTJcFCHj46RvnbdJhmQUb3gHMDhVftI/edit?usp=sharing")]
-public class ScalerModule : MonoBehaviour
+public class ScalerModule : MonoBehaviour, IExecutable
 {
     [SerializeField, Tooltip("Целевой масштаб объекта.")]
     private Vector3 targetScale = new Vector3(2, 2, 2);

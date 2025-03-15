@@ -5,7 +5,7 @@ using UnityEngine;
 /// Задаёт указанным объектам значение activeSelf, равное state
 /// </summary>
 [HelpURL("https://docs.google.com/document/d/1GP4_m0MzOF8L5t5pZxLChu3V_TFIq1czi1oJQ2X5kpU/edit?usp=sharing")]
-public class GameObjectActivator : MonoBehaviour
+public class GameObjectActivator : MonoBehaviour, IExecutable
 {
     [SerializeField, Tooltip("Список объектов, которым нужно задать состояние")]
     private List<StateContainer> targets;

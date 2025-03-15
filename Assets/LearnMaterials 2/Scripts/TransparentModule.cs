@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
 [HelpURL("https://docs.google.com/document/d/1Cmm__cbik5J8aHAI6PPaAUmEMF3wAcNo3rpgzsYPzDM/edit?usp=sharing")]
-public class TransparentModule : MonoBehaviour
+public class TransparentModule : MonoBehaviour, IExecutable
 {
     [SerializeField, Tooltip("Скорость изменения прозрачности."), Range(0.1f, 10f)]
     private float changeSpeed = 1f; // Установлено значение по умолчанию и ограничение
