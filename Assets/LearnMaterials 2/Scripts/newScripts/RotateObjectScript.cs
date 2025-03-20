@@ -6,6 +6,7 @@ public class RotateObjectScript : SampleScript
     public Vector3 targetRotation; // Угол поворота
     public float speed = 10f;      // Скорость вращения
     private bool isRotating = false; // Флаг для отслеживания вращения
+    public Transform target; // Целевой объект
 
     public override void Use()
     {
@@ -17,10 +18,10 @@ public class RotateObjectScript : SampleScript
         if (isRotating)
         {
             // Плавное вращение к целевому углу
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), speed * Time.deltaTime);
+            target.transform.rotation = Quaternion.RotateTowards(target.transform.rotation, Quaternion.Euler(targetRotation), speed * Time.deltaTime);
 
             // Остановка, если объект достиг целевого угла
-            if (transform.rotation == Quaternion.Euler(targetRotation))
+            if (target.transform.rotation == Quaternion.Euler(targetRotation))
             {
                 isRotating = false;
             }

@@ -6,6 +6,7 @@ public class MoveObjectScript : SampleScript
     public Vector3 targetPosition; // Целевая точка
     public float speed = 1f;       // Скорость перемещения
     private bool isMoving = false; // Флаг для отслеживания движения
+    public Transform target; // Целевой объект
 
     public override void Use()
     {
@@ -17,10 +18,10 @@ public class MoveObjectScript : SampleScript
         if (isMoving)
         {
             // Плавное перемещение к целевой точке
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            target.transform.position = Vector3.MoveTowards(target.transform.position, targetPosition, speed * Time.deltaTime);
 
             // Остановка, если объект достиг цели
-            if (transform.position == targetPosition)
+            if (target.transform.position == targetPosition)
             {
                 isMoving = false;
             }
