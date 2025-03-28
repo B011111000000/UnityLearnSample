@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CubeMad
   - InteractivePlane
+  - InteractiveBox
   layers:
   - Default
   - TransparentFX

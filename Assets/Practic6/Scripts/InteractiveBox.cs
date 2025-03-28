@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class InteractiveBox : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class InteractiveBox : MonoBehaviour
 
     private void Awake()
     {
-        // Создаем LineRenderer для визуализации луча
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ LineRenderer пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.startWidth = 0.05f;
         lineRenderer.endWidth = 0.05f;
@@ -20,12 +20,12 @@ public class InteractiveBox : MonoBehaviour
     {
         if (next != null)
         {
-            // Обновляем позиции луча
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, next.transform.position);
             lineRenderer.enabled = true;
 
-            // Проверяем попадание луча в препятствия
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             CheckRaycast();
         }
         else
@@ -36,13 +36,13 @@ public class InteractiveBox : MonoBehaviour
 
     public void AddNext(InteractiveBox box)
     {
-        // Удаляем старую связь, если она была
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         if (next != null)
         {
             next = null;
         }
 
-        // Устанавливаем новую связь
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         next = box;
         Debug.Log($"Added next box: {box.name}");
     }
@@ -55,7 +55,7 @@ public class InteractiveBox : MonoBehaviour
         Ray ray = new Ray(transform.position, direction);
         RaycastHit hit;
 
-        // Рисуем луч в окне Scene (для Debug)
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ Scene (пїЅпїЅпїЅ Debug)
         Debug.DrawRay(transform.position, direction, Color.green);
 
         if (Physics.Raycast(ray, out hit, distance))
@@ -63,7 +63,7 @@ public class InteractiveBox : MonoBehaviour
             ObstacleItem obstacle = hit.collider.GetComponent<ObstacleItem>();
             if (obstacle != null)
             {
-                // Наносим урон препятствию
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 obstacle.GetDamage(Time.deltaTime);
                 currentObstacle = obstacle;
             }
@@ -78,7 +78,7 @@ public class InteractiveBox : MonoBehaviour
         }
     }
 
-    // Для визуализации в редакторе
+    // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void OnDrawGizmos()
     {
         if (next != null)

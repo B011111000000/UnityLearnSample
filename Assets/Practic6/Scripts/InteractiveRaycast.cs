@@ -1,10 +1,10 @@
-using UnityEngine;
+п»їusing UnityEngine;
 
 public class InteractiveRaycast : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab; // Префаб кубика с InteractiveBox
+    [SerializeField] private GameObject prefab; // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ InteractiveBox
     private Camera mainCamera;
-    private InteractiveBox selectedBox; // Для хранения выбранного InteractiveBox
+    private InteractiveBox selectedBox; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ InteractiveBox
 
     private void Start()
     {
@@ -18,11 +18,11 @@ public class InteractiveRaycast : MonoBehaviour
 
     private void HandleMouseClicks()
     {
-        if (Input.GetMouseButtonDown(0)) // Левый клик
+        if (Input.GetMouseButtonDown(0)) // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         {
             HandleLeftClick();
         }
-        else if (Input.GetMouseButtonDown(1)) // Правый клик
+        else if (Input.GetMouseButtonDown(1)) // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         {
             HandleRightClick();
         }
@@ -35,31 +35,31 @@ public class InteractiveRaycast : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            // Проверяем, попали ли в InteractiveBox
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅ InteractiveBox
             InteractiveBox hitBox = hit.collider.GetComponent<InteractiveBox>();
 
             if (hitBox != null)
             {
                 if (selectedBox == null)
                 {
-                    // Первый выбор - запоминаем
+                    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                     selectedBox = hitBox;
                     Debug.Log("Selected box: " + selectedBox.name);
                 }
                 else if (selectedBox != hitBox)
                 {
-                    // Соединяем выбранный бокс с новым
+                    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                     selectedBox.AddNext(hitBox);
                     Debug.Log($"Connected {selectedBox.name} to {hitBox.name}");
-                    selectedBox = null; // Сбрасываем выбор после соединения
+                    selectedBox = null; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 }
             }
             else if (hit.collider.CompareTag("InteractivePlane"))
             {
-                // Создаем новый кубик на плоскости
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 CreateBoxOnPlane(hit);
 
-                // Если был выбран бокс, сбрасываем выбор
+                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 if (selectedBox != null)
                 {
                     selectedBox = null;
@@ -76,7 +76,7 @@ public class InteractiveRaycast : MonoBehaviour
             return;
         }
 
-        // Учитываем размер объекта и нормаль поверхности
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 position = hit.point + hit.normal * (prefab.transform.localScale.y / 2);
         Quaternion rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
@@ -95,11 +95,11 @@ public class InteractiveRaycast : MonoBehaviour
             InteractiveBox hitBox = hit.collider.GetComponent<InteractiveBox>();
             if (hitBox != null)
             {
-                // Удаляем выбранный бокс
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 Destroy(hitBox.gameObject);
                 Debug.Log("Deleted box: " + hitBox.name);
 
-                // Если удаляемый бокс был выбран, сбрасываем выбор
+                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 if (selectedBox == hitBox)
                 {
                     selectedBox = null;
